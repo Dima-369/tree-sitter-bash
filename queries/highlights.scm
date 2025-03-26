@@ -7,8 +7,6 @@
 
 (command_name) @function
 
-(variable_name) @property
-
 [
   "case"
   "do"
@@ -34,9 +32,11 @@
 (function_definition name: (word) @function)
 
 (file_descriptor) @number
+(number) @number
 
 [
   (command_substitution)
+  (simple_expansion)
   (process_substitution)
   (expansion)
 ]@embedded
@@ -49,8 +49,3 @@
   "<"
   "|"
 ] @operator
-
-(
-  (command (_) @constant)
-  (#match? @constant "^-")
-)
